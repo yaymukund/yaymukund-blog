@@ -1,0 +1,17 @@
+{% extends "index.html" %}
+
+{% block content %}
+  {{ toc::table_of_contents(current_page_slug=page.slug) }}
+  <div class="post">
+    <div class="post__title">
+      <h1>{{ page.title | safe }}</h1>
+      <div class="post__meta">
+        {% if page.date %}{{ page.date | date(format="%Y-%m-%d") }}{% endif %}
+      </div>
+    </div>
+
+    <div class="post__body">
+      {{ page.content | safe }}
+    </div>
+  </div>
+{% endblock content %}
