@@ -1,11 +1,11 @@
 {% macro table_of_contents(class="", current_page_slug="") %}
   <ul class="toc {% if class %}{{ class }}{% endif %}">
     {% set blog = get_section(path="_index.md") %}
-    {% for page in blog.pages | reverse %}
-    <li class="{% if current_page_slug == page.slug %}current{% endif %}">
+    {% for page in blog.pages %}
+      <li class="{% if current_page_slug == page.slug %}current{% endif %}">
         <a href="{{ page.permalink }}">
           <span class="title">{{ page.title }}</span>
-          <span class="date">{{ page.date | date(format="%Y-%m-%d") }}</span>
+          <span class="date"> / {{ page.date | date(format="%B %e, %Y") }}</span>
         </a>
       </li>
     {% endfor %}

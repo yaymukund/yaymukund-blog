@@ -33,13 +33,13 @@ ul.toc {
     &:not(last-child) { margin-bottom: 0.25rem; }
     a { text-decoration: none; }
     span.title { text-decoration: underline; }
-    span.date {
-      margin-left: 0.25rem;
-      color: #777;
-    }
+    span.date { color: #777; }
 
     &.current {
-      span.title { text-decoration: none; }
+      span.title {
+        text-decoration: none;
+        &:before { content: "→ "; }
+      }
       a { color: #777; }
       pointer-events: none;
     }
@@ -49,6 +49,7 @@ ul.toc {
 .post {
   &__title {
     display: flex;
+    justify-content: space-between;
     align-items: baseline;
     h1 { margin: 0 0 0 1rem; }
   }

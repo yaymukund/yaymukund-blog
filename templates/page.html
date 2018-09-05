@@ -6,7 +6,7 @@
     <div class="post__title">
       <h1>{{ page.title | safe }}</h1>
       <div class="post__meta">
-        {% if page.date %}{{ page.date | date(format="%Y-%m-%d") }}{% endif %}
+        {% if page.date %}{{ page.date | date(format="%B %e, %Y") }}{% endif %}
       </div>
     </div>
 
