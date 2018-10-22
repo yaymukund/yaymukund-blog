@@ -8,9 +8,13 @@ html {
   font-size: 1.125rem;
 }
 
+body {
+  max-width: 800px;
+}
+
 header {
   h1.logo {
-    margin: 1rem 0 0 1rem;
+    margin: 1rem 0 1rem 0.5rem;
     a {
       color: #000;
       font-family: 'Inconsolata', monospace;
@@ -21,12 +25,15 @@ header {
   }
 }
 
+.paginator_links {
+  display: flex;
+  a.next { margin-left: auto; }
+}
+
 ul.toc {
-  padding: 0 0 0 1rem;
-  &:not(.main) {
-    border-bottom: 1px dashed #777;
-    padding-bottom: 1rem;
-  }
+  padding: 1rem 0 1rem 1rem;
+  background-color: #eadfe9;
+  border-bottom: 1px dashed #aaa;
 
   li {
     list-style-type: none;
@@ -38,7 +45,10 @@ ul.toc {
     &.current {
       span.title {
         text-decoration: none;
-        &:before { content: "→ "; }
+        &:before {
+          white-space: pre;
+          content: "→ ";
+        }
       }
       a { color: #777; }
       pointer-events: none;
@@ -49,14 +59,13 @@ ul.toc {
 .post {
   &__title {
     display: flex;
-    justify-content: space-between;
     align-items: baseline;
     h1 { margin: 0 0 0 1rem; }
   }
 
   &__meta {
     margin-left: 0.5rem;
-    color: #777;
+    a { color: #777; }
   }
 
   &__body {
@@ -66,6 +75,8 @@ ul.toc {
       font-size: 1rem;
       line-height: 1.5rem;
     }
+
+    p { line-height: 1.4rem; }
 
     p, h2, h3, h4 {
       padding-left: 1rem;
@@ -80,6 +91,14 @@ ul.toc {
       padding-left: 1rem;
     }
 
+    blockquote {
+      border-left: 1px solid #777;
+      em {
+        font-style: normal;
+        background-color: #eadfe9;
+      }
+    }
+
     code {
       background-color: #f5f5f5;
       padding: 0 0.2rem;
@@ -88,11 +107,8 @@ ul.toc {
 }
 
 footer {
-  border-top: 1px dashed #aaa;
-  padding-top: 1rem;
   color: #aaa;
   display: block;
   text-align: right;
-  margin-top: 2rem;
   p { margin: 0; }
 }

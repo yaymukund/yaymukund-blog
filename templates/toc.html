@@ -1,10 +1,19 @@
+{% macro title_or_truncate(page) %}
+  {% if page.title %}
+    {{ page.title }}
+  {% else %}
+    {{ page.content | safe | striptags | split(pat=" ") | slice(end=5) | join(sep=" ") }}&hellip;
+  {% endif %}
+
+{% endmacro title_or_truncate %}
+
 {% macro table_of_contents(class="", current_page_slug="") %}
   <ul class="toc {% if class %}{{ class }}{% endif %}">
     {% set blog = get_section(path="_index.md") %}
     {% for page in blog.pages %}
       <li class="{% if current_page_slug == page.slug %}current{% endif %}">
         <a href="{{ page.permalink }}">
-          <span class="title">{{ page.title }}</span>
+          <span class="title">{{ toc::title_or_truncate(page=page) }}</span>
           <span class="date"> / {{ page.date | date(format="%B %e, %Y") }}</span>
         </a>
       </li>

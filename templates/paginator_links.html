@@ -1,0 +1,10 @@
+{% macro paginator_links(paginator) %}
+  <div class="paginator_links">
+    {% if paginator.previous %}
+    <a href="{{ paginator.previous }}" class="previous">Previous Page</a>
+    {% endif %}
+    {% if paginator.next %}
+      <a href="{{ paginator.next }}" class="next">Next Page</a>
+    {% endif %}
+  </div>
+{% endmacro paginator_links %}

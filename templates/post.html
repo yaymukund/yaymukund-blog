@@ -1,0 +1,13 @@
+{% macro post(page) %}
+  <div class="post">
+    <div class="post__title">
+      <div class="post__meta">
+        <a href="{{ page.permalink }}">{{ page.date | date(format="%B %e, %Y") }}</a>
+      </div>
+    </div>
+
+    <div class="post__body">
+      {{ page.content | safe | replace(from="--", to="&mdash;") }}
+    </div>
+  </div>
+{% endmacro post %}

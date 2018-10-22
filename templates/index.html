@@ -1,4 +1,6 @@
+{% import "post.html" as post %}
 {% import "toc.html" as toc %}
+{% import "paginator_links.html" as paginator_links %}
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -13,12 +15,17 @@
 
   <header>
     <h1 class="logo">
-      <a href="/">yaymukun<span class="s">d&rsquo;s</span> blog ^_^</a>
+      <a href="/">yaymukund<span class="s">&rsquo;s</span> blog ^_^</a>
     </h1>
   </header>
 
   <body>
     {% block content %}
+      {% for page in paginator.pages %}
+        {{ post::post(page=page) }}
+      {% endfor %}
+
+      {{ paginator_links::paginator_links(paginator=paginator) }}
       {{ toc::table_of_contents(class="main") }}
     {% endblock content %}
   </body>
