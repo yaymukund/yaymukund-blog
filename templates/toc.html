@@ -4,19 +4,35 @@
   {% else %}
     {{ page.content | safe | striptags | split(pat=" ") | slice(end=5) | join(sep=" ") }}&hellip;
   {% endif %}
-
 {% endmacro title_or_truncate %}
+
+{% macro toc_entries(pages, current_page_slug="") %}
+  {% for page in pages %}
+    <li class="{% if current_page_slug == page.slug %}current{% endif %}">
+      <a href="{{ page.permalink }}">
+        <span class="title">{{ toc::title_or_truncate(page=page) }}</span>
+        <span class="date"> / {{ page.date | date(format="%B %e, %Y") }}</span>
+      </a>
+    </li>
+  {% endfor %}
+{% endmacro toc_entries %}
 
 {% macro table_of_contents(current_page_slug="") %}
   <ul class="toc">
-    {% set blog = get_section(path="_index.md") %}
-    {% for page in blog.pages %}
-      <li class="{% if current_page_slug == page.slug %}current{% endif %}">
-        <a href="{{ page.permalink }}">
-          <span class="title">{{ toc::title_or_truncate(page=page) }}</span>
-          <span class="date"> / {{ page.date | date(format="%B %e, %Y") }}</span>
-        </a>
-      </li>
-    {% endfor %}
+    {% set blog = get_section(path="posts/_index.md") %}
+    {% if current_page_slug %}
+      {% for page in blog.pages %}
+        {% if page.slug == current_page_slug %}
+          {% set start = loop.index0 - 2 %}
+          {% set end = loop.index0 + 4 %}
+          {% if start < 0 %} {% set start = 0 %} {% endif %}
+          {% set pages = blog.pages | slice(start=start, end=end) %}
+          {{ toc::toc_entries(pages=pages, current_page_slug=current_page_slug) }}
+        {% endif %}
+      {% endfor %}
+    {% else %}
+      {% set pages = blog.pages | slice(end=10) %}
+      {{ toc::toc_entries(pages=pages) }}
+    {% endif %}
   </ul>
 {% endmacro table_of_contents %}

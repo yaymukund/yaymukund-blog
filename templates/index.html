@@ -1,6 +1,5 @@
 {% import "post.html" as post %}
 {% import "toc.html" as toc %}
-{% import "paginator_links.html" as paginator_links %}
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -21,12 +20,17 @@
     </header>
 
     {% block content %}
-      {% for page in paginator.pages %}
+      {% set posts = get_section(path="posts/_index.md") %}
+      {% for page in posts.pages | slice(end=10) %}
         {{ post::post(page=page) }}
       {% endfor %}
-
-      {{ paginator_links::paginator_links(paginator=paginator) }}
     {% endblock content %}
+
+    {% block pagination %}
+      <div class="paginator_links">
+        <a href="{{ get_url(path="posts/page/2", trailing_slash=false) }}" class="next">Next Page</a>
+      </div>
+    {% endblock %}
 
     {% block toc %}
       {{ toc::table_of_contents() }}

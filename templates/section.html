@@ -1,0 +1,14 @@
+{% extends "index.html" %}
+{% import "post.html" as post %}
+{% import "paginator_links.html" as paginator_links %}
+
+{% block content %}
+  {% for page in paginator.pages %}
+    {{ post::post(page=page) }}
+  {% endfor %}
+{% endblock %}
+
+{% block pagination %}
+  {{ paginator_links::paginator_links(paginator=paginator) }}
+{% endblock %}
+
