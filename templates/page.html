@@ -4,5 +4,8 @@
 
 {% block content %}
   {{ post::post(page=page) }}
-  {{ toc::table_of_contents(current_page_slug=page.slug) }}
 {% endblock content %}
+
+{% block toc %}
+  {{ toc::table_of_contents(current_page_slug=page.slug) }}
+{% endblock %}

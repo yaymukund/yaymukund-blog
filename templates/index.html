@@ -13,25 +13,29 @@
     <link rel="alternate" type="application/rss+xml" title="RSS" href="{{ get_url(path="rss.xml", trailing_slash=false) }}">
   </head>
 
-  <header>
-    <h1 class="logo">
-      <a href="/">yaymukund<span class="s">&rsquo;s</span> blog ^_^</a>
-    </h1>
-  </header>
-
   <body>
-    {% block content %}
-      {% for page in paginator.pages %}
-        {{ post::post(page=page) }}
-      {% endfor %}
+    <header>
+      <h1 class="logo">
+        <a href="/">yaymukund<span class="s">&rsquo;s</span> weblog ^_^</a>
+      </h1>
+    </header>
 
-      {{ paginator_links::paginator_links(paginator=paginator) }}
-      {{ toc::table_of_contents(class="main") }}
-    {% endblock content %}
+    <div class="content">
+      {% block content %}
+        {% for page in paginator.pages %}
+          {{ post::post(page=page) }}
+        {% endfor %}
+
+        {{ paginator_links::paginator_links(paginator=paginator) }}
+      {% endblock content %}
+    </div>
+
+    {% block toc %}
+      {{ toc::table_of_contents() }}
+    {% endblock toc %}
+
+    <footer>
+      <p>powered by <a href="https://github.com/Keats/gutenberg">gutenberg</a></p>
+    </footer>
   </body>
-
-  <footer>
-    <p>mukund lakshman 2018</p>
-    <p>powered by <a href="https://github.com/Keats/gutenberg">gutenberg</a></p>
-  </footer>
 </html>

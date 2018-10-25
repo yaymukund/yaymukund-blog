@@ -7,8 +7,8 @@
 
 {% endmacro title_or_truncate %}
 
-{% macro table_of_contents(class="", current_page_slug="") %}
-  <ul class="toc {% if class %}{{ class }}{% endif %}">
+{% macro table_of_contents(current_page_slug="") %}
+  <ul class="toc">
     {% set blog = get_section(path="_index.md") %}
     {% for page in blog.pages %}
       <li class="{% if current_page_slug == page.slug %}current{% endif %}">
