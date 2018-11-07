@@ -1,0 +1,21 @@
+#!/usr/bin/env zsh
+setopt HIST_SUBST_PATTERN
+
+CONTENT_DIR="content/posts"
+
+title=$@;
+slug=${title[1,50]:l:s/% //:gs/ /-/};
+file="$CONTENT_DIR/$slug.md";
+
+if [[ -f $file ]]; then
+  echo "$file already exists. Oops.";
+  exit 1;
+fi
+
+cat >$file <<EOL
++++
+date = $(date +%Y-%m-%d)
+title = "$title"
++++
+
+EOL
