@@ -16,6 +16,18 @@ cat >$file <<EOL
 +++
 date = $(date +%Y-%m-%d)
 title = "$title"
+# [extra]
+# cw = "content warning"
+# type = "poem"
+# poem_author = "A.K. Ramanujan"
+# poem_date = "26 November 1991"
+
+This is an example of a post.
+
+> It can include a quote. And you're free to *emphasize text*
+> within a quote.
+
+-- Mukund
 +++
 
 EOL
