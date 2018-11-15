@@ -21,6 +21,7 @@ title = "$title"
 # type = "poem"
 # poem_author = "A.K. Ramanujan"
 # poem_date = "26 November 1991"
++++
 
 This is an example of a post.
 
@@ -28,6 +29,7 @@ This is an example of a post.
 > within a quote.
 
 -- Mukund
-+++
 
 EOL
+
+vim $file
