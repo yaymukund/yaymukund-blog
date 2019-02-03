@@ -108,7 +108,7 @@ ul.toc {
       margin-bottom: 0;
     }
 
-    ul {
+    ul, ol {
       li:not(last-child) { margin-bottom: 0.25rem; }
       padding-left: 1rem;
     }
