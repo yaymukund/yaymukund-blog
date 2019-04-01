@@ -22,7 +22,7 @@
     {% block content %}
       {% set posts = get_section(path="posts/_index.md") %}
       {% for page in posts.pages | slice(end=10) %}
-        {{ post::post(page=page) }}
+        {{ post::summary(page=page) }}
       {% endfor %}
     {% endblock content %}
 

@@ -89,6 +89,12 @@ ul.toc {
     margin-left: 0.5rem;
   }
 
+  &__readmore {
+    text-align: right;
+    margin-bottom: 1rem;
+    max-width: 800px;
+  }
+
   &__body {
     max-width: 800px;
     pre {
