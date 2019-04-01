@@ -119,7 +119,8 @@ If you want to mock instead of spy, you have a couple options:
   instead of proxying.
 * You could also [use a mocking library][mock_shootout]. Just a caveat: I had
   trouble with many of the crates, but maybe you'll have better luck.
-* Finally, you could try conditional compilation.
+* Finally, you could try conditional compilation as mentioned above. This lets
+  let you get around type checking.
 
 [conditional_compilation]: https://klausi.github.io/rustnish/2019/03/31/mocking-in-rust-with-conditional-compilation.html
 [mock_shootout]: https://asomers.github.io/mock_shootout/
