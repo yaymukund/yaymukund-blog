@@ -11,6 +11,8 @@ Here's how you add a wireless printer to [Sway][sway_url]. You'll need the follo
 2. [Avahi][avahi_url] for wireless support
 3. `nss-mdns`, so we can refer to the printer as `<hostname>.local` (e.g. `myprinter.local`)
 
+<!-- more -->
+
 ```bash
 # Install the packages
 $ yay -S cups avahi nss-mdns

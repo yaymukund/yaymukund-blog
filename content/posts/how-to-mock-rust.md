@@ -1,11 +1,12 @@
 +++
-date = 2019-03-10
-title = "How to mock Rust"
+date = 2019-03-01
+title = "How to spy on your Rust code"
 +++
 
-## How to mock Rust
+## How to spy on your Rust code
 
-In the following code, how can you ensure `Player` is making the correct API calls?
+In the following code, how can you test that `Player` is making the correct API
+calls?
 
 ```rs
 struct Player<'a> {
@@ -17,15 +18,17 @@ impl<'a> Player<'a> {
     Player { api }
   }
 
-  pub fn sing(&self, song: &str) {
-    self.api.play(song);
+  pub fn play(&self, song: &str) {
+    self.api.sing(song);
   }
 
-  pub fn shush(&self) {
-    self.api.stop();
+  pub fn stop(&self) {
+    self.api.shush();
   }
 }
 ```
+
+<!-- more -->
 
 The answer? Make it generic!
 
@@ -36,7 +39,7 @@ struct Player<'a, T> {
 
 impl<'a, T> Player<'a, T>
 where
-  T: impl PlayerApi,
+  T: PlayerApi,
 {
   pub fn new(api: &'a T) -> Player<'a, T> {
     Player { api }
@@ -47,28 +50,42 @@ where
 
 trait PlayerApi {
   // Default trait implementation uses `Api`
-  fn play(&self, url: &str) {
-    Api::play(self, url)
+  fn sing(&self, url: &str);
+  fn shush(&self);
+}
+
+impl PlayerApi for Api {
+  fn sing(&self, url: &str) {
+    Api::sing(self, url)
   }
 
-  fn stop(&self) {
-    Api::stop(self)
+  fn shush(&self) {
+    Api::shush(self)
   }
 }
 ```
 
-Then you can easily mock it:
+Then you can easily spy on it:
 
 ```rs
 #[cfg(test)]
 module Test {
-  struct ApiMock {
-    invocations: Vec<Vec<&str>>,
+  struct ApiSpy {
+    pub invocations: Vec<String>,
+    api: Api,
   }
 
-  impl PlayerApi for ApiMock {
-    fn play(&self, url: &str) {
-      self.invocations.push(vec!["play", url.to_string()]);
+  impl ApiSpy {
+    pub fn new() -> ApiSpy {
+      ApiSpy { api: Api::New() }
+    }
+  }
+
+  impl PlayerApi for ApiSpy {
+    fn sing(&self, url: &str) {
+      self.invocations.push('play');
+      self.api.sing(url)
+    }
   }
 
   #[test]
@@ -76,11 +93,35 @@ module Test {
     let api = ApiMock::new();
     let player = Player::new(&api);
     player.play("my_url");
-    assert_eq!(api.invocations[0][0], "play");
-    assert_eq!(api.invocations[0][1], "my_url");
+    assert_eq!(api.invocations[0], "play");
   }
 }
 ```
 
-It should be possible to make this much nicer with macros and derives, but
-that's for another post.
+That's it!
+
+### How can I assert that I passed the correct arguments?
+
+You can store the arguments in the `ApiSpy`. For example, here's [how I mocked
+the mpv api][roja_mpv_api] and [used it in a test][roja_player].
+
+### I don't want to define a trait for my API just for tests!
+
+Defining a trait for your external APIs is good for reasons beyond testing. But
+if you still still don't want to make your API generic, then you could [use
+conditional compilation instead.][conditional_compilation].
+
+### What if I don't want to execute API code in tests?
+
+If you want to mock instead of spy, you have a couple options:
+
+* If your API's return types are easy to mock, then just return mock responses
+  instead of proxying.
+* You could also [use a mocking library][mock_shootout]. Just a caveat: I had
+  trouble with many of the crates, but maybe you'll have better luck.
+* Finally, you could try conditional compilation.
+
+[conditional_compilation]: https://klausi.github.io/rustnish/2019/03/31/mocking-in-rust-with-conditional-compilation.html
+[mock_shootout]: https://asomers.github.io/mock_shootout/
+[roja_player]: https://github.com/yaymukund/roja/blob/57ed629b9cc9446993361a13dc05de4f9057d1d3/src/player.rs#L90
+[roja_mpv_api]: https://github.com/yaymukund/roja/blob/57ed629b9cc9446993361a13dc05de4f9057d1d3/src/player/mpv_api.rs#L42

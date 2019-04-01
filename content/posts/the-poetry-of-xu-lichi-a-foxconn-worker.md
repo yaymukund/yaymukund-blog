@@ -22,6 +22,8 @@ title = "The poetry of Xu Lichi, a Foxconn worker"
 
 *Source: [libcom.org/blog/xulizhi-foxconn-suicide-poetry](https://libcom.org/blog/xulizhi-foxconn-suicide-poetry)*
 
+<!-- more -->
+
 **On My Deathbed**
 
 I want to take another look at the ocean, behold the vastness of tears from half a lifetime
