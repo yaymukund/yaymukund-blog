@@ -26,20 +26,15 @@ title = "The poetry of Xu Lichi, a Foxconn worker"
 
 **On My Deathbed**
 
+<pre class="poem">
 I want to take another look at the ocean, behold the vastness of tears from half a lifetime
-
 I want to climb another mountain, try to call back the soul that I’ve lost
-
 I want to touch the sky, feel that blueness so light
-
 But I can’t do any of this, so I’m leaving this world
-
 Everyone who’s heard of me
-
 Shouldn’t be surprised at my leaving
-
 Even less should you sigh or grieve
-
 I was fine when I came, and fine when I left.
+</pre>
 
 -- Xu Lizhi, 30 September 2014
