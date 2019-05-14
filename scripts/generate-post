@@ -3,14 +3,9 @@ setopt HIST_SUBST_PATTERN
 
 CONTENT_DIR="content/posts"
 
-title=$@;
+vared -p 'post title: ' -c title
 slug=${title[1,50]:l:s/% //:gs/ /-/};
 file="$CONTENT_DIR/$slug.md";
-
-if [ $# -eq 0 ]; then
-  echo "Usage: generate-poem Man bites dog";
-  exit 1;
-fi
 
 if [[ -f $file ]]; then
   echo "$file already exists. Oops.";
@@ -21,11 +16,6 @@ cat >$file <<EOL
 +++
 date = $(date +%Y-%m-%d)
 title = "$title"
-# [extra]
-# cw = "content warning"
-# type = "poem"
-# poem_author = "A.K. Ramanujan"
-# poem_date = "26 November 1991"
 +++
 
 This is an example of a post.
@@ -37,4 +27,4 @@ This is an example of a post.
 
 EOL
 
-vim $file
+$EDITOR $file
