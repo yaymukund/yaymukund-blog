@@ -35,3 +35,9 @@ After that I will turn to grass.
 </pre>
 
 -- Lisa Allen Ortiz
+
+I love this poem. The surreal imagery ("my teeth chattered alphabets", "skulls
+of deer") contrasts with her plain, almost boring, sentence structure (First
+this. Then that. Once this). She also speaks with absolute certainty,
+describing only what did or will happen. The resulting poem sounds like a
+recipe or a witness statement, but what is she recounting?
