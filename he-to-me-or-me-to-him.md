@@ -1,13 +1,7 @@
-+++
-date = 2018-10-25
-[extra]
-cw = "Self-harm"
-type = "poem"
-+++
-
 **He to Me or Me to Him\***
 
-<pre>When I was translating
+<pre class="poem">
+When I was translating
 twenty years ago
 the saints who sang
 ten centuries ago about Siva
@@ -44,8 +38,16 @@ of him who had thought
 of me and the saints
 who spoke through me
 to him yet had told him
-nothing nothing at all</pre>
+nothing nothing at all
+</pre>
 
-26 November 1991
+-- A.K. Ramanujan, 26 November 1991
 
-A.K. Ramanujan
+\* This poem contains a footnote:
+
+> I was translating last week the Tamil poems of Atmanam. He had attempted
+> suicide in 1983. I thought he was the best of the poets in Tamil. While I was
+> translating, it occured to me to ead the biographical note at the end of the
+> book. To my shock, I read there that he was reading night and day my Speaking
+> of Siva just before he attempted sucide. I had some connection with him that
+> I couldn't quite define.
