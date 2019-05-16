@@ -1,16 +1,19 @@
 {% macro post(page) %}
-  {{ post::render(body = page.content, page = page, readmore = false) }}
+  {{ post::render(body = page.content, page = page) }}
 {% endmacro post %}
 
 {% macro summary(page) %}
   {% if page.summary %}
-    {{ post::render(body = page.summary, page = page, readmore = true) }}
+    {{ post::render(body = page.summary, page = page) }}
+    <div class="post__readmore">
+      <a href="{{ page.permalink }}">Continue reading&hellip;</a>
+    </div>
   {% else %}
-    {{ post::render(body = page.content, page = page, readmore = false) }}
+    {{ post::render(body = page.content, page = page) }}
   {% endif %}
 {% endmacro post %}
 
-{% macro render(body, page, readmore) %}
+{% macro render(body, page) %}
   <div class="post">
     <div class="post__title">
       <div class="post__meta">
@@ -21,11 +24,5 @@
     <div class="post__body">
       {{ body | safe | replace(from="--", to="&mdash;") }}
     </div>
-
-    {% if readmore %}
-      <div class="post__readmore">
-        <a href="{{ page.permalink }}">Continue reading&hellip;</a>
-      </div>
-    {% endif %}
   </div>
 {% endmacro %}

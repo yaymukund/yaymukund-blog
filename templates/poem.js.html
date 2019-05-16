@@ -1,0 +1,36 @@
+<script>
+  function wrapPoem(poem) {
+    let container = document.createElement('div')
+    container.setAttribute('class', 'poem-container');
+
+    let wrapper = document.createElement('div');
+    container.appendChild(wrapper);
+
+    let title = getTitle(poem);
+    let author = getAuthor(poem);
+
+    if (title) { wrapper.appendChild(title); }
+    wrapper.appendChild(poem.cloneNode(true));
+    if (author) { wrapper.appendChild(author); }
+
+    poem.parentNode.replaceChild(container, poem);
+  }
+
+  function getTitle(poem) {
+    let title = poem.previousElementSibling;
+    if (title.children.length === 1 && title.firstElementChild.nodeName === 'STRONG') {
+      return title;
+    }
+  }
+
+  function getAuthor(poem) {
+    let author = poem.nextElementSibling;
+    if (author.nodeName === 'P' && author.textContent.startsWith('—')) {
+      return author;
+    }
+  }
+
+  window.onload = function() {
+    document.querySelectorAll('pre.poem').forEach(wrapPoem);
+  };
+</script>
