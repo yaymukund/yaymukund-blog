@@ -79,11 +79,6 @@ ul.toc {
 .post {
   border-top: 1px dashed #999;
   padding: 1rem 2rem 0 1rem;
-  &__title {
-    display: flex;
-    align-items: baseline;
-    h1 { margin: 0 0 0 1rem; }
-  }
 
   &__meta {
     margin-left: 0.5rem;
