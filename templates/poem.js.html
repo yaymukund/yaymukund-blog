@@ -26,6 +26,7 @@
   function getAuthor(poem) {
     let author = poem.nextElementSibling;
     if (author.nodeName === 'P' && author.textContent.startsWith('—')) {
+      author.className = 'poem-author';
       return author;
     }
   }
