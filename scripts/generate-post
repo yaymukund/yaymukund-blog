@@ -23,7 +23,22 @@ This is an example of a post.
 > It can include a quote. And you're free to *emphasize text*
 > within a quote.
 
--- Mukund
+Or a poem:
+
+**The title**
+
+<pre class="poem">
+and the verses
+  where
+
+spacing
+will be pres
+
+er       v      e
+d
+</pre>
+
+-- Author, year
 
 EOL
 
