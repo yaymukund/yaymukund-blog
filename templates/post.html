@@ -22,7 +22,7 @@
     </div>
 
     <div class="post__body">
-      {{ body | safe | replace(from="--", to="&mdash;") }}
+      {{ body | replace(from="--", to="&mdash;") | safe }}
     </div>
   </div>
 {% endmacro %}

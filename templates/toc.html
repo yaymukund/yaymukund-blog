@@ -2,7 +2,7 @@
   {% if page.title %}
     {{ page.title }}
   {% else %}
-    {{ page.content | safe | striptags | split(pat=" ") | slice(end=5) | join(sep=" ") }}&hellip;
+    {{ page.content | striptags | split(pat=" ") | slice(end=5) | join(sep=" ") | safe }}&hellip;
   {% endif %}
 {% endmacro title_or_truncate %}
 
