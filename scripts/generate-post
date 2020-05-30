@@ -4,7 +4,7 @@ setopt HIST_SUBST_PATTERN
 CONTENT_DIR="content/posts"
 
 vared -p 'post title: ' -c title
-slug=${title[1,50]:l:s/% //:gs/ /-/};
+slug=${title[1,50]:l:s/% //:gs/ /-/:gs/./-/};
 file="$CONTENT_DIR/$slug.md";
 
 if [[ -f $file ]]; then
