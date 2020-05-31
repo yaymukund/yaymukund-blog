@@ -93,6 +93,8 @@ ul.toc {
   &__body {
     max-width: 800px;
 
+    pre { overflow-x: auto; }
+
     pre:not(.poem) {
       font-family: 'Inconsolata', monospace;
       padding: 1rem;
