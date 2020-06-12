@@ -42,7 +42,7 @@ responses to [my AskMetaFilter question][ask_mefi].
 - **2019** ✗ [Gnome: Replacing "master" reference in git branch names.][gnome]
 - **2020** ✗ [RuboCop asked to change its name to avoid casually referencing the police.][rubocop]
 - **2020** ✓ [The Go programming language eliminates usages of whitelist/blacklist and master/slave.][golang]
-- **2020** ✓ [PHP replaces whitelist/blacklist with allowlist/blocklist][php]
+- **2020** ~ [PHP asked to replace whitelist/blacklist with allowlist/blocklist][php]
 
 [ask_mefi]: https://ask.metafilter.com/345497/Help-me-find-all-the-naming-controversies-in-programming
 [la_county]: https://www.snopes.com/fact-check/masterslave/
