@@ -10,6 +10,11 @@ responses to [my AskMetaFilter question][ask_mefi].
 
 <!-- more -->
 
+**Note:** This list is not any sort of exhaustive or representative sample. I
+offer it as a starting point for anyone interested in reading more
+perspectives. If you find any links that should be added, please don't hesitate
+to send me an email.
+
 ---
 - ✓ accepted
 - ✗ rejected
@@ -62,9 +67,6 @@ them.
 - ✓ [dotnet/roslyn: Remove the term "whitelist"][roslyn]
 - ~ [git: Rename offensive terminology][git]
 - ~ [gitlab: don't default to `master` branch][gitlab]
-
-If you find any links you feel would benefit the list, please don't hesitate to
-send me an email!
 
 [ask_mefi]: https://ask.metafilter.com/345497/Help-me-find-all-the-naming-controversies-in-programming
 [la_county]: https://www.snopes.com/fact-check/masterslave/
