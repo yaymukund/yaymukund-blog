@@ -3,10 +3,10 @@ date = 2020-06-09
 title = "What's in a name?"
 +++
 
-I decided to catalogue examples of software developers being asked to change a
-name to avoid being racist, sexist, transphobic, ableist, or otherwise bigoted.
-About half of these examples come from responses to [my AskMetaFilter
-question][ask_mefi].
+I decided to catalogue examples of engineers-- primarily software developers--
+being asked to change a name to avoid being racist, sexist, transphobic,
+ableist, or otherwise bigoted.  About half of these examples come from
+responses to [my AskMetaFilter question][ask_mefi].
 
 <!-- more -->
 
