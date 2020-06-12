@@ -67,6 +67,7 @@ them.
 - ✓ [dotnet/roslyn: Remove the term "whitelist"][roslyn]
 - ~ [git: Rename offensive terminology][git]
 - ~ [gitlab: don't default to `master` branch][gitlab]
+- ✗ [black: Please change the project's name][black]
 
 [ask_mefi]: https://ask.metafilter.com/345497/Help-me-find-all-the-naming-controversies-in-programming
 
@@ -113,6 +114,7 @@ them.
 [roslyn]: https://github.com/dotnet/roslyn/pull/3507
 [git]: https://lore.kernel.org/git/CAOAHyQwyXC1Z3v7BZAC+Bq6JBaM7FvBenA-1fcqeDV==apdWDg@mail.gmail.com/
 [gitlab]: https://gitlab.com/gitlab-org/gitlab/-/issues/220906
+[black]: https://github.com/psf/black/issues/1363
 
 <script>
   var items = document.getElementsByTagName("li");
