@@ -77,8 +77,8 @@ That's it!
 Make sure you run:
 
 ```bash
-$ sudo cupsenable <short-name>
-$ sudo cupsaccept <short-name>
+$ sudo cupsenable $short_name
+$ sudo cupsaccept $short_name
 ```
 
 You may be able to do this from the web interface, but I was getting
