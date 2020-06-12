@@ -21,7 +21,7 @@ to send me an email.
 - ~ unclear / not applicable
 ---
 
-- **?????** ✓ PCI bus uses "target" instead of "slave" after reviewer of the specification objects.
+- **?????** ✓ [PCI bus uses "target" instead of "slave" after reviewer objects.][pci_bus]
 - **2003** ~ [LA County asks manufacturers, suppliers and vendors to stop using "master/slave"][la_county]
 - **2011** ✓ [Rename Mozilla libpr0n to image][libpr0n]
 - **2011** ✓ [The C Markdown library Upskirt renamed to Sundown][sundown]
@@ -69,6 +69,8 @@ them.
 - ~ [gitlab: don't default to `master` branch][gitlab]
 
 [ask_mefi]: https://ask.metafilter.com/345497/Help-me-find-all-the-naming-controversies-in-programming
+
+[pci_bus]: https://ask.metafilter.com/345497/Help-me-find-all-the-naming-controversies-in-programming#4948899
 [la_county]: https://www.snopes.com/fact-check/masterslave/
 [libpr0n]: https://bugzilla.mozilla.org/show_bug.cgi?id=66984
 [sundown]: https://github.com/vmg/sundown/issues/36
