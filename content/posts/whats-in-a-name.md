@@ -10,7 +10,11 @@ responses to [my AskMetaFilter question][ask_mefi].
 
 <!-- more -->
 
------
+---
+- ✓ accepted
+- ✗ rejected
+- ~ unclear / not applicable
+---
 
 - **?????** ✓ PCI bus uses "target" instead of "slave" after reviewer of the specification objects.
 - **2003** ~ [LA County asks manufacturers, suppliers and vendors to stop using "master/slave"][la_county]
@@ -36,13 +40,31 @@ responses to [my AskMetaFilter question][ask_mefi].
 - **2018** ✓ [Rename Erlang library "coon" to "enot."][enot]
 - **2018** ✗ [Attempt to rename nipple.js][nipplejs]
 - **2018** ✓ [ContributorCovenant: Consider renaming the master branch][contributor_covenant]
+- **2018** ✗ [Avoid master/slave terminology][python]
 - **2019** ✓ [yellowbrick renames `poof()` method to `show()`][yellowbrick]
 - **2019** ✓ [Angular.js - Rename blacklist/whitelist to more accurate and appropriate names.][angularjs]
 - **2019** ~ [GIMP forked as Glimpse][glimpse] after [GIMP devs refuse to change the name.][gimp]
 - **2019** ✗ [Gnome: Replacing "master" reference in git branch names.][gnome]
-- **2020** ✗ [RuboCop asked to change its name to avoid casually referencing the police.][rubocop]
-- **2020** ✓ [The Go programming language eliminates usages of whitelist/blacklist and master/slave.][golang]
-- **2020** ~ [PHP asked to replace whitelist/blacklist with allowlist/blocklist][php]
+
+There's a TON of 2020 Pull Requests about this, so I am going to pick some of
+them.
+
+### 2020
+
+- ✗ [RuboCop: asked to change its name to avoid casually referencing the police.][rubocop]
+- ~ [NCSC recommends using "allow list" and "deny list"][ncsc]
+- ✓ [golang: replace usages of whitelist/blacklist and master/slave][golang]
+- ~ [php: Replace all whitelist/blacklist with allowlist/blocklist][php]
+- ~ [nodejs: rename blacklist/whitelist to blocklist/allowlist ][nodejs]
+- ~ [pihole: Change blacklist and whitelist terminology][pihole]
+- ~ [openssl: Remove some offensive/archaic terminology][openssl]
+- ~ [PHPCSStandards/PHPCSExtra: warn on the use of non-inclusive language][phpcsextra]
+- ✓ [dotnet/roslyn: Remove the term "whitelist"][roslyn]
+- ~ [git: Rename offensive terminology][git]
+- ~ [gitlab: don't default to `master` branch][gitlab]
+
+If you find any links you feel would benefit the list, please don't hesitate to
+send me an email!
 
 [ask_mefi]: https://ask.metafilter.com/345497/Help-me-find-all-the-naming-controversies-in-programming
 [la_county]: https://www.snopes.com/fact-check/masterslave/
@@ -68,14 +90,25 @@ responses to [my AskMetaFilter question][ask_mefi].
 [enot]: https://github.com/comtihon/enot/issues/59
 [nipplejs]: https://github.com/yoannmoinet/nipplejs/issues/80
 [contributor_covenant]: https://github.com/ContributorCovenant/contributor_covenant/issues/569
+[python]: https://bugs.python.org/issue34605
 [yellowbrick]: https://github.com/DistrictDataLabs/yellowbrick/releases/tag/v1.0.1
 [angularjs]: https://github.com/angular/angular/pull/28529
 [glimpse]: https://glimpse-editor.github.io/about/#what-is-wrong-with-the-gimp-name
 [gimp]: https://web.archive.org/web/20190705135842/https://gitlab.gnome.org/GNOME/gimp/issues/3617
 [gnome]: https://mail.gnome.org/archives/desktop-devel-list/2019-May/msg00050.html
+
 [rubocop]: https://metaredux.com/posts/2020/06/08/the-rubocop-name-drama-redux.html
 [golang]: https://go-review.googlesource.com/c/go/+/236857/
 [php]: https://github.com/php/php-src/pull/5685
+[ncsc]: https://www.ncsc.gov.uk/blog-post/terminology-its-not-black-and-white
+[nodejs]: https://github.com/nodejs/node/pull/33813
+[pihole]: https://discourse.pi-hole.net/t/change-blacklist-and-whitelist-terminology/31657/39
+[sourcegraph]: https://github.com/sourcegraph/sourcegraph/issues/11389
+[openssl]: https://github.com/openssl/openssl/pull/12089
+[phpcsextra]: https://github.com/PHPCSStandards/PHPCSExtra/issues/59
+[roslyn]: https://github.com/dotnet/roslyn/pull/3507
+[git]: https://lore.kernel.org/git/CAOAHyQwyXC1Z3v7BZAC+Bq6JBaM7FvBenA-1fcqeDV==apdWDg@mail.gmail.com/
+[gitlab]: https://gitlab.com/gitlab-org/gitlab/-/issues/220906
 
 <script>
   var items = document.getElementsByTagName("li");
