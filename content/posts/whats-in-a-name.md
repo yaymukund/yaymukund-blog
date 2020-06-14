@@ -36,6 +36,7 @@ to send me an email.
 - **2014** ✗ [Attempt to rename the PHP library "ColorJizz".][colorjizz]
 - **2015** ✓ [Rename "moron.js" to objection.js][objectionjs]
 - **2015** ~ [Rose Eveleth recommends changing "male/female" connectors to "muffin/pan".][muffinpan]
+- **2015** ✓ [chromium: Make code and contents gender neutral][chromium_gender_neutral]
 - **2016** ✓ [Redis stops using "master"/"slave"][redis]
 - **2017** ✗ [Attempt to rename "voluptuous"][voluptuous]
 - **2017** ✓ [The Ruby gem "factory_girl" becomes factory_bot.][factory_bot]
@@ -47,6 +48,7 @@ to send me an email.
 - **2018** ✗ [Attempt to rename "nipple.js"][nipplejs]
 - **2018** ✓ [ContributorCovenant: Consider renaming the "master" branch][contributor_covenant]
 - **2018** ✗ [Avoid "master"/"slave" terminology][python]
+- **2018** ✓ [chromium: Avoid the racially-charged terms "blacklist" and "whitelist"][chromium_blacklist_whitelist]
 - **2019** ✓ [yellowbrick renames `poof()` method to `show()`][yellowbrick]
 - **2019** ✓ [Angular.js - Rename "blacklist"/"whitelist"][angularjs]
 - **2019** ~ [GIMP forked as Glimpse][glimpse] after [GIMP devs refuse to change the name.][gimp]
@@ -87,6 +89,7 @@ them.
 [colorjizz]: https://github.com/mikeemoo/ColorJizz-PHP/issues/7
 [objectionjs]: https://github.com/Vincit/objection.js/issues/10
 [muffinpan]: https://www.lastwordonnothing.com/2015/11/27/a-modest-proposal-for-re-naming-connectors-and-fasteners/
+[chromium_gender_neutral]: https://bugs.chromium.org/p/chromium/issues/detail?id=542537
 [redis]: https://github.com/antirez/redis/issues/3185
 [voluptuous]: https://github.com/alecthomas/voluptuous/issues/287
 [factory_bot]: https://thoughtbot.com/blog/factory_bot
@@ -98,6 +101,7 @@ them.
 [nipplejs]: https://github.com/yoannmoinet/nipplejs/issues/80
 [contributor_covenant]: https://github.com/ContributorCovenant/contributor_covenant/issues/569
 [python]: https://bugs.python.org/issue34605
+[chromium_blacklist_whitelist]: https://bugs.chromium.org/p/chromium/issues/detail?id=842296
 [yellowbrick]: https://github.com/DistrictDataLabs/yellowbrick/releases/tag/v1.0.1
 [angularjs]: https://github.com/angular/angular/pull/28529
 [glimpse]: https://glimpse-editor.github.io/about/#what-is-wrong-with-the-gimp-name
