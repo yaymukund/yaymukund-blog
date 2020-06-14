@@ -39,6 +39,7 @@ to send me an email.
 - **2016** ✓ [Redis stops using master/slave][redis]
 - **2017** ✗ [Attempt to rename voluptuous][voluptuous]
 - **2017** ✓ [The Ruby gem factory_girl becomes factory_bot.][factory_bot]
+- **2018** ✓ [Rails uses allowlist/denylist instead of "blacklist"/"whitelist"][rails]
 - **2018** ✗ [Richard Stallman refuses to remove an abortion joke in the glibc manual.][abortion_joke]
 - **2018** ✓ [IETF publishes "Terminology, Power and Oppressive Language"][ietf]
 - **2018** ✗ [Rename "pydor," which is a derogatory term for homosexual in Russian.][pydor]
@@ -89,6 +90,7 @@ them.
 [redis]: https://github.com/antirez/redis/issues/3185
 [voluptuous]: https://github.com/alecthomas/voluptuous/issues/287
 [factory_bot]: https://thoughtbot.com/blog/factory_bot
+[rails]: https://github.com/rails/rails/issues/33677
 [abortion_joke]: https://lwn.net/Articles/770966/
 [ietf]: https://tools.ietf.org/id/draft-knodel-terminology-00.html
 [pydor]: https://github.com/dohnto/pydor/issues/5
