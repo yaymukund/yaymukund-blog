@@ -33,8 +33,9 @@ resource "aws_iam_role" "plants" {
 EOF
 }
 
-# This presumes you have a zip file get_water_level.zip which contains a
-get_water_level.js file which exports a `handler` function
+# This presumes you have a zip file get_water_level.zip
+# which contains a get_water_level.js file which exports
+# a `handler` function
 resource "aws_lambda_function" "get_water_level" {
   filename = "get_water_level.zip"
   function_name = "get_water_level"

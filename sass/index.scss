@@ -77,7 +77,6 @@ ul.toc {
 }
 
 .post {
-  background-color: #f2f6ff;
   border-top: 1px dashed #999;
   padding: 1rem 2rem 0 1rem;
 
@@ -98,6 +97,7 @@ ul.toc {
 
     pre:not(.poem) {
       font-family: 'Inconsolata', monospace;
+      background-color: #f5f5f5 !important;
       padding: 1rem;
       font-size: 1rem;
       line-height: 1.5rem;
@@ -132,7 +132,6 @@ ul.toc {
     }
 
     code {
-      background-color: #f5f5f5;
       padding: 0 0.2rem;
     }
 
