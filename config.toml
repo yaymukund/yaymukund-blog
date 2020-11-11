@@ -5,8 +5,8 @@ default_language = "en"
 compile_sass = true
 generate_rss = true
 highlight_code = true
-highlight_theme = "cheerfully-light"
+highlight_theme = "inspired-github"
 build_search_index = true
+extra_syntaxes = ["syntaxes"]
 
 [extra]
-# Put all your custom variables here
