@@ -3,10 +3,10 @@ title = "yaymukund's weblog"
 description = "thoughts i'd like to keep around"
 default_language = "en"
 compile_sass = true
-generate_rss = true
 highlight_code = true
 highlight_theme = "inspired-github"
 build_search_index = true
 extra_syntaxes = ["syntaxes"]
+generate_feed = true
 
 [extra]
