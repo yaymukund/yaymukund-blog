@@ -11,9 +11,9 @@ responses to [my AskMetaFilter question][ask_mefi].
 <!-- more -->
 
 **Note:** This list is not any sort of exhaustive or representative sample. I
-offer it as a starting point for anyone interested in reading more
-perspectives. If you find any links that should be added, please don't hesitate
-to send me an email.
+offer it as a starting point for anyone interested in reading more about how
+tech communities respond. If you find any links that should be added, please
+don't hesitate to send me an email.
 
 ---
 - ✓ accepted
