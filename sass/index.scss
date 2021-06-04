@@ -80,7 +80,8 @@ ul.toc {
   padding: 1rem 2rem 0 1rem;
 
   &__meta {
-    margin-left: 0.5rem;
+    font-weight: bold;
+    margin-left: 1rem;
   }
 
   &__readmore {
@@ -108,7 +109,7 @@ ul.toc {
       border-style: dashed;
     }
 
-    p { line-height: 1.4rem; }
+    p { line-height: 1.5rem; }
 
     p, h2, h3, h4 {
       padding-left: 1rem;
@@ -116,6 +117,10 @@ ul.toc {
 
     h2, h3, h4 {
       margin-bottom: 0;
+    }
+
+    h2 {
+      font-size: 1.25rem;
     }
 
     ul, ol {

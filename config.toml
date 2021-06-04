@@ -1,14 +1,15 @@
 base_url = "https://blog.yaymukund.com"
-title = "yaymukund's weblog"
-description = "thoughts i'd like to keep around"
-default_language = "en"
-compile_sass = true
 build_search_index = true
+compile_sass = true
+default_language = "en"
+description = "thoughts i'd like to keep around"
 generate_feed = true
+title = "yaymukund's weblog"
 
 [markdown]
+extra_syntaxes = ["syntaxes"]
 highlight_code = true
 highlight_theme = "inspired-github"
-extra_syntaxes = ["syntaxes"]
+smart_punctuation = true
 
 [extra]

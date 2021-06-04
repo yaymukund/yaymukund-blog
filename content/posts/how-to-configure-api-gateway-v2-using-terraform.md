@@ -3,6 +3,8 @@ date = 2020-11-11
 title = "How to configure API Gateway v2 using Terraform"
 +++
 
+## How to configure API Gateway v2 using Terraform
+
 Here's how you wire up an AWS lambda into an HTTP API using Terraform
 and AWS's API Gateway v2 resources.
 

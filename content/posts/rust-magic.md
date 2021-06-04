@@ -3,6 +3,8 @@ date = 2021-02-02
 title = "Rust Magic"
 +++
 
+## Rust magic
+
 This is a list of places in Rust where implementing a trait or using a struct
 affects the syntax of your code. I think of these features as "magical" because
 using them can change the behavior of very basic Rust code (`let`, `for-in`,

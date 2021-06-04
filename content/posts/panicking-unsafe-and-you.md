@@ -3,6 +3,8 @@ date = 2020-05-30
 title = "Panicking, unsafe, and you"
 +++
 
+## Panicking, unsafe, and you
+
 In Jon Gjengset's *Demystifying Unsafe Code* talk at Rust NYC, he gives a very
 interesting example of unsafe code. [Here's the link-- please go and watch
 it--][jonhoo_talk] but I've transcribed it here along with my paraphrased
