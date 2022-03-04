@@ -6,7 +6,21 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta http-equiv="content-type" content="text/html; charset=utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
-    <title>{% block title %}{{ config.title }}{% endblock title %}</title>
+
+    <!-- meta stuff -->
+    {% for tag in config.extra.meta_tags %}
+      <meta
+        {% for key,val in tag %}
+          {{key}}="{{ val }}"
+        {% endfor %}
+      >
+    {% endfor %}
+    <meta property="og:url" content="{{ config.base_url | safe }}{{ current_path | safe }}" />
+
+    {% block meta_content %}
+    <title>{{ config.title }}</title>
+    {% endblock meta_content %}
+
     <link rel="stylesheet" href="{{ get_url(path="index.css", trailing_slash=false) }}">
     <link href="https://fonts.googleapis.com/css?family=IBM+Plex+Sans:400,400i,700|Inconsolata:400,700&amp;subset=latin-ext" rel="stylesheet">
 
@@ -19,9 +33,12 @@
 
   <body>
     <header>
-      <h1 class="logo">
-        <a href="/">yaymukund<span class="s">&rsquo;s</span> weblog ^_^</a>
-      </h1>
+      <a href="/" title="Home">
+        <img src="/logo.png">
+        <h1 class="logo">
+          yaymukund<span class="s">&rsquo;s</span> weblog
+        </h1>
+      </a>
     </header>
 
     {% block content %}

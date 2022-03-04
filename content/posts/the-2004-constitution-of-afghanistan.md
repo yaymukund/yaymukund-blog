@@ -1,6 +1,9 @@
 +++
 date = 2018-11-14
 title = "The 2004 constitution of Afghanistan"
+
+[extra]
+untitled = true
 +++
 
 > One result of all the outside attention was the 2004 constitution [of

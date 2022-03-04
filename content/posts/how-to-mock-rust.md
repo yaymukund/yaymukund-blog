@@ -3,8 +3,6 @@ date = 2019-03-01
 title = "How to spy on your Rust code"
 +++
 
-## How to spy on your Rust code
-
 In the following code, how can you test that `Player` is making the correct API
 calls?
 

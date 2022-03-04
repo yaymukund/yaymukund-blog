@@ -1,5 +1,8 @@
 +++
 date = 2016-10-26
+
+[extra]
+untitled = true
 +++
 
 > It may surprise you or not surprise you that when we went to Iraq in 2007, General Petraeus and I said, "Do you know why these people fighting? Show us the data," no study like [the Vietcong Motivation & Morale Study (1966), pdf](https://www.rand.org/content/dam/rand/pubs/research_memoranda/2006/RM4911-2.pdf) had ever been done. That was the period when the Secretary of Defense and military commander on the ground used to describe the enemy as "evil-doers" and say that "the evil-doers hate us because they hate who we are, not because of what we do." And we said, well, let's look into that.

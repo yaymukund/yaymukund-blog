@@ -3,8 +3,6 @@ date = 2020-11-11
 title = "How to configure API Gateway v2 using Terraform"
 +++
 
-## How to configure API Gateway v2 using Terraform
-
 Here's how you wire up an AWS lambda into an HTTP API using Terraform
 and AWS's API Gateway v2 resources.
 
@@ -84,7 +82,7 @@ output "api_url" {
 }
 ```
 
-### Notes
+## Notes
 
 1. **Anyone with the URL will be able to invoke your lambda.** If you want
    access control or rate limiting, you'll need to add that.
@@ -100,7 +98,7 @@ output "api_url" {
    stage invoke the lambda. If you want to restrict it to a particular route,
    you can make the `source_arn` more specific.
 
-### Resources
+## Resources
 
 - [The Official AWS Documentation][official_docs] - Thorough, verbose, not Terraform-specific.
 - [How to use the `aws_apigatewayv2_api` to add an HTTP API to a Lambda function][advancedweb] - Omits the fact that you need a `stage`.

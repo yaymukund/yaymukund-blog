@@ -1,6 +1,9 @@
 +++
 date = 2018-11-14
 title = "American textbooks for Afghan children"
+
+[extra]
+untitled = true
 +++
 
 > Looking to keep the [Soviet--Afghan] war fueled, Washington-- where the

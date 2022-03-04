@@ -1,5 +1,8 @@
 +++
 date = 2016-11-15
+
+[extra]
+untitled = true
 +++
 
 > This past January, when I started [teaching the post-emancipation African American history survey course], Obama was running in the primary against Hillary Clinton. Many of us still presumed that Clinton was going to be the nominee and then Obama became a movement over the next several months.

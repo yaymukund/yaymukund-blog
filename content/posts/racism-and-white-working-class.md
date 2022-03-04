@@ -1,5 +1,8 @@
 +++
 date = 2016-11-14
+
+[extra]
+untitled = true
 +++
 
 > Working-class politics had so little room to maneuver in hard times that racial sympathy was shoved aside. In a famous 1844 public correspondence with the abolitionist Gerrit Smith, labor reformer George Henry Evans spoke for many labor leaders when he declared himself "formerly" an advocate of abolition: "This was before I saw that there was white slavery."

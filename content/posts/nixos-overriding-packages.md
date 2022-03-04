@@ -1,9 +1,7 @@
 +++
 date = 2021-06-02
-title = "NixOS: Overriding packages"
+title = "Overriding packages in NixOS"
 +++
-
-## Overriding packages in NixOS
 
 In NixOS, it's sometimes desirable to override a package in order to extend
 or modify its behavior. For example, I override my Neovim to add plugins so
@@ -44,7 +42,7 @@ environment.systemPackages = [
 ];
 ```
 
-### Bonus: Installing a single package from `main`
+## Bonus: Installing a single package from `main`
 
 If you need to install a single package from the `main` branch but keep the
 rest of your code on your nix channel (usually the main channel or
@@ -64,7 +62,7 @@ example, I often use this when `Discord` releases an update. Nixpkgs usually
 merges the version bump fairly quickly, but it doesn't reach the release
 channels for many days during which Discord is unusable.
 
-### References
+## References
 
 - [NixOS Wiki: Overlays](https://nixos.wiki/wiki/Overlays)
 - [/r/NixOS: Install a package from specific version of NixOS](https://old.reddit.com/r/NixOS/comments/a3w67x/install_a_package_from_a_specific_version_of/eb9q19s/?context=3)

@@ -3,8 +3,6 @@ date = 2021-02-02
 title = "Rust Magic"
 +++
 
-## Rust magic
-
 This is a list of places in Rust where implementing a trait or using a struct
 affects the syntax of your code. I think of these features as "magical" because
 using them can change the behavior of very basic Rust code (`let`, `for-in`,
@@ -17,7 +15,7 @@ epilogue pointing you to more articles if this topic interests you.
 
 ----------
 
-### Contents
+## Contents
 
 - [`trait Drop`](#trait-drop-playground-link)
 - [`trait IntoIterator` and `for-in`](#trait-intoiterator-and-for-in-playground-link)
@@ -29,7 +27,7 @@ epilogue pointing you to more articles if this topic interests you.
 
 ----------
 
-#### `trait Drop` ([Playground Link][trait-drop-playground])
+### `trait Drop` ([Playground Link][trait-drop-playground])
 
 ```rust
 struct Foo {
@@ -52,7 +50,7 @@ fn main() {
 }
 ```
 
-#### `trait IntoIterator` and `for-in` ([Playground Link][intoiterator-playground])
+### `trait IntoIterator` and `for-in` ([Playground Link][intoiterator-playground])
 
 ```rust
 struct MyCustomStrings(Vec<String>);
@@ -82,7 +80,7 @@ fn main() {
 }
 ```
 
-#### `trait Deref`, `DerefMut`, and `&` ([Playground Link][deref-playground])
+### `trait Deref`, `DerefMut`, and `&` ([Playground Link][deref-playground])
 
 ```rust
 use std::ops::Deref;
@@ -111,7 +109,7 @@ fn main() {
 }
 ```
 
-#### `trait Display`, `Debug`, and `{}` ([Playground Link][display-debug-playground]]
+### `trait Display`, `Debug`, and `{}` ([Playground Link][display-debug-playground]]
 
 ```rust
 use std::fmt;
@@ -154,7 +152,7 @@ fn main() {
 }
 ```
 
-#### `Option`, `Result`, and `?` ([Playground Link][option-result-playground])
+### `Option`, `Result`, and `?` ([Playground Link][option-result-playground])
 
 ```rust
 // Notes:
@@ -182,7 +180,7 @@ fn main() -> Result<(), SomeError> {
 }
 ```
 
-### Epilogue
+## Epilogue
 
 When I first started compiling this list, I asked around in the Rust community
 discord. [scottmcm][scottmcm] from the Rust Language team introduced me to the

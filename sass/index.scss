@@ -24,19 +24,20 @@ body:after {
 }
 
 header {
-  display: flex;
   background-color: white;
   border-top: 1px solid #333;
 
+  a {
+    display: flex;
+    color: #000;
+    font-family: 'Inconsolata', monospace;
+    font-weight: 700;
+    text-decoration: none;
+    .s { letter-spacing: -.2rem; }
+  }
+
   h1.logo {
     margin: 0.5rem 0 1rem 1rem;
-    a {
-      color: #000;
-      font-family: 'Inconsolata', monospace;
-      font-weight: 700;
-      text-decoration: none;
-      .s { letter-spacing: -.2rem; }
-    }
   }
 }
 
@@ -77,11 +78,11 @@ ul.toc {
 
 .post {
   border-top: 1px dashed #999;
-  padding: 1rem 2rem 0 1rem;
+  padding: 1rem 2rem 0 0.75rem;
 
   &__meta {
     font-weight: bold;
-    margin-left: 1rem;
+    margin-left: 1.25rem;
   }
 
   &__readmore {
@@ -109,23 +110,23 @@ ul.toc {
       border-style: dashed;
     }
 
-    p { line-height: 1.5rem; }
+    p, ul > li { line-height: 1.5rem; }
 
-    p, h2, h3, h4 {
-      padding-left: 1rem;
+    p, h1, h2, h3, h4 {
+      padding-left: 1.25rem;
     }
 
-    h2, h3, h4 {
+    h1, h2, h3, h4 {
       margin-bottom: 0;
     }
 
-    h2 {
-      font-size: 1.25rem;
-    }
+    h1 { font-size: 1.5rem; }
+    h2 { font-size: 1.25rem; }
+    h3 { font-size: 1rem; }
 
     ul, ol {
       li:not(last-child) { margin-bottom: 0.25rem; }
-      padding-left: 1rem;
+      padding-left: 1.25rem;
     }
 
     blockquote {

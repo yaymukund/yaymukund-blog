@@ -57,7 +57,7 @@ don't hesitate to send me an email.
 There's a TON of 2020 Pull Requests about this, so I am going to pick some of
 them.
 
-### 2020
+## 2020
 
 - ✗ [RuboCop: asked to change its name to avoid casually referencing the police.][rubocop]
 - ~ [NCSC recommends using "allow list" and "deny list"][ncsc]

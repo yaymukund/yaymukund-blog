@@ -3,8 +3,6 @@ date = 2021-10-18
 title = "Restic + Backblaze B2 on NixOS"
 +++
 
-## Restic + Backblaze B2 on NixOS
-
 While NixOS fully supports making `restic` backups using Backblaze, I couldn't
 find documentation for it. From browsing configs on GitHub, many people seem to
 _also_ use `rclone` but I'd rather not introduce another dependency.

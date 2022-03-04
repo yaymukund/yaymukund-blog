@@ -1,5 +1,8 @@
 +++
 date = 2016-11-16
+
+[extra]
+untitled = true
 +++
 
 > Something that Republican presidents love to do on their first day of office which is reinstate something known as the "global gag rule," which is that agencies around the world which receive US support for their health programs are not allowed to provide abortion of contraception services or even talk about them-- hence the name "gag rule."

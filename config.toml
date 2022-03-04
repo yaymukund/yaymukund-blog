@@ -13,3 +13,10 @@ highlight_theme = "inspired-github"
 smart_punctuation = true
 
 [extra]
+meta_tags = [
+  { name = "author", content = "Mukund Lakshman" },
+  { name = "twitter:site", content = "@yaymukund" },
+  { name = "twitter:creator", content = "@yaymukund" },
+  { property = "og:site_name", content = "yaymukund's weblog" },
+  { property = "og:type", content = "website" }
+]

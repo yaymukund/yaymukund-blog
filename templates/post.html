@@ -1,19 +1,19 @@
 {% macro post(page) %}
-  {{ post::render(body = page.content, page = page) }}
+  {{ post::render(body = page.content, page = page, link_title = false) }}
 {% endmacro post %}
 
 {% macro summary(page) %}
   {% if page.summary %}
-    {{ post::render(body = page.summary, page = page) }}
+    {{ post::render(body = page.summary, page = page, link_title = true) }}
     <div class="post__readmore">
       <a href="{{ page.permalink }}">Continue reading&hellip;</a>
     </div>
   {% else %}
-    {{ post::render(body = page.content, page = page) }}
+    {{ post::render(body = page.content, page = page, link_title = true) }}
   {% endif %}
 {% endmacro post %}
 
-{% macro render(body, page) %}
+{% macro render(body, page, link_title) %}
   <div class="post">
     <div class="post__title">
       <div class="post__meta">
@@ -22,6 +22,14 @@
     </div>
 
     <div class="post__body">
+      {% if not page.extra.untitled %}
+        {% if link_title %}
+          <h1><a href="{{ page.permalink }}">{{ page.title }}</a></h1>
+        {% else %}
+          <h1>{{ page.title }}</h1>
+        {% endif %}
+      {% endif %}
+
       {{ body | safe }}
     </div>
   </div>

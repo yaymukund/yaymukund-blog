@@ -1,6 +1,9 @@
 +++
 date = 2018-11-15
 title = "The poetry of Xu Lichi, a Foxconn worker"
+
+[extra]
+untitled = true
 +++
 
 > By translating these poems, we aim to memorialize Xu, share some of his

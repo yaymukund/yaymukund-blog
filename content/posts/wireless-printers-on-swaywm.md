@@ -3,8 +3,6 @@ date = 2019-02-03
 title = "Wireless printers on swaywm"
 +++
 
-## Wireless printers on swaywm
-
 Here's how you add a wireless printer to [Sway][sway_url]. You'll need the following tools:
 
 1. [CUPS][cups_url], the "standards-based, open source printing system"
@@ -51,7 +49,7 @@ name, it should say "Idle, Accepting Jobs."
 Now, you can try to print your document. You can track your print job from
 the CUPS web interface. If something goes wrong, you can see the error there.
 
-### Bonus! Add custom printer drivers
+## Bonus! Add custom printer drivers
 
 To access advanced features of your printer, you may need to install a custom
 driver. First, find the relevant drivers by searching the AUR for your printer

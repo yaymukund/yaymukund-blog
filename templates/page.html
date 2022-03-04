@@ -2,6 +2,37 @@
 {% import "post.html" as post %}
 {% import "toc.html" as toc %}
 
+{% block meta_content %}
+  <title>{{ page.title }}</title>
+  <meta name="twitter:title" content="{{ page.title }}">
+  <meta property="og:title" content="{{ page.title }}">
+
+  {% if page.description %}
+    {% set page_description = page.description %}
+  {% else %}
+    {% set page_description = page.content | striptags | truncate(length = 160) %}
+  {% endif %}
+
+  <meta name="description" content="{{ page_description }}">
+  <meta name="twitter:description" content="{{ page_description }}">
+  <meta property="og:description" content="{{ page_description }}">
+
+  {% if page.extra.meta_tags %}
+    {% for tag in page.extra.meta_tags %}
+      <meta
+        {% for key,val in tag %}
+          {# hack to prepend the base_url :| #}
+          {% if val is matching("^/posts") %}
+            {% set val = config.base_url ~ val %}
+          {% endif %}
+
+          {{ key }}="{{ val }}"
+        {% endfor %}
+      >
+    {% endfor %}
+  {% endif %}
+{% endblock meta_content %}
+
 {% block content %}
   {{ post::post(page=page) }}
 {% endblock content %}
