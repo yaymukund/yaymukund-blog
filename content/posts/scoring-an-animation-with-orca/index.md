@@ -25,10 +25,10 @@ In this post, I'll demonstrate how to score an animation using [Orca][orca].
 ## What is Orca?
 
 [Orca][orca] is an [esoteric programming language][esolang] for composing
-music. An Orca program is somewhere between a circuit diagram and a classic
-ASCII roguelike. But you don't need to know either of those things to get
-started--- in an interview with its creator Devine Lu Linvega of the
-programming duo [Hundred Rabbits][100rabbits]:
+music. An Orca program is somewhere between a circuit diagram and an ASCII
+roguelike. But you don't need to know either of those things to get started---
+in an interview with its creator Devine Lu Linvega of the programming duo
+[Hundred Rabbits][100rabbits]:
 
 >  I was always kind of aiming, I guess, at children. I was like, if you can
 >  just open the page and put that in front of a kid, could they figure it out?
@@ -49,19 +49,12 @@ Some resources to get started:
   YouTube](https://www.youtube.com/watch?v=RaI_TuISSJE): This is how I got
   interested in Orca. It's an excellent introduction--- jumps to the good stuff
   without getting lost in the details. Note: Some of the operators have changed
-  since this video was made, but the core principles haven't changed.
+  since this video was made, but the core principles haven't.
 - [Official Documentation](https://wiki.xxiivv.com/site/orca.html)
 - [Making a song in
   1h](https://www.twitch.tv/videos/1024098887?collection=Alz0SKVffxam4w):
   Beginning with a blank canvas, I try to learn Orca and make a tune in an
   hour.
-
-**Note**: Throughout this post, I will refer to hexadecimal numbers using the
-prefix `0x`. For example, `0x10` is decimal 16.
-
-**Note 2**: I will refer to the last digit in a hexadecimal number as the
-"ones' digit" and the second-to-last digit as the "sixteens' digit." For
-example, `0x10`'s ones' digit is `0` and its sixteens' digit is `1`.
 
 ## The final score
 
@@ -77,10 +70,11 @@ example, `0x10`'s ones' digit is `0` and its sixteens' digit is `1`.
 </p>
 
 Although it might seem complicated--- especially if you're not familiar with
-Orca--- this program is actually the result of building on a few core ideas
-that I hope feels like a natural progression.
+Orca--- this program is actually the result of building on a few core ideas.
+As you read this, I hope it will feel like a natural progression to go from one
+step to the next.
 
-But to do that, I need to start at the beginning.
+Ok, now let's start at the beginning.
 
 ## What is a score?
 
@@ -90,42 +84,39 @@ Let's say this happens on frame 21. Using Orca, how do you play a sound on the
 21st frame and then never again?
 
 The answer to this was not obvious to me. Most Orca compositions, at the time
-of writing this, consisted of loops. I could not find any examples of playing a
-note at a precise frame. Since we have access to the clock frame using the `C`
+of writing this, consisted of loops. I could not find any examples that did
+what I wanted. But since we have access to the clock frame using the `C`
 operator, this feels like it *should* be possible.
 
-I will now explain step-by-step how I built a timer to score an animation.
+Here's one way to do it:
 
 ## Learning how to wait
 
-<div class="first orca-example">
-  <div>
+**Note**: Throughout this post, I will refer to hexadecimal numbers using the
+prefix `0x`. For example, `0x10` is decimal 16.
+
+**Note 2**: I will refer to the last digit in a hexadecimal number as the
+"ones' digit" and the second-to-last digit as the "sixteens' digit." For
+example, `0x10`'s ones' digit is `0` and its sixteens' digit is `1`.
+
+Ok, let's begin.
+
+<div class="first orca-example"> <div>
 
   First, use a pair of hexadecimal clocks `Cf` and `fCf`:
 
-  - The *frame count* is at the bottom right, a monotonically increasing number.
-  - `Cf` mods the frame count by `f`, or 16, to output the ones' digit, a
-    number from `0` to `e`.
-  - `fCf` also divides the frame count by `f`, or 16, to output the sixteens'
-    digit.
-  </div>
-  <video 
-    aria-describedby="example-1-desc"
-    playsinline
-    autoplay
-    loop
-    muted
-    src="/posts/scoring-an-animation-with-orca/01-clock.mp4"
-  />
-  <p id="example-1-desc" class="aria-description">
-    A hexadecimal clock in Orca--- written `Cf`--- that outputs an increasing
-    number from `0` to `e`. Upon reaching `e`, it starts over from `0`. Also, a
-    second clock written `fCf` that produces a similar output, but which
-    increases at 1/16 the rate of the first clock.
-  </p>
-</div>
-<div class="orca-example">
-  <div>
+  - The *frame count* is at the bottom right, a monotonically increasing
+    number.
+  - `Cf` mods the frame count by `0xf`, or 16, to output the ones' digit, a
+    number from `0x0` to `0xe`.
+  - `fCf` also divides the frame count by `0xf`, or 16, to output the sixteens'
+    digit. </div> <video aria-describedby="example-1-desc" playsinline autoplay
+    loop muted src="/posts/scoring-an-animation-with-orca/01-clock.mp4" /> <p
+    id="example-1-desc" class="aria-description"> A hexadecimal clock in
+    Orca--- written `Cf`--- that outputs an increasing number from `0x0` to
+    `0xe`. Upon reaching `0xe`, it starts over from `0x0`. Also, a second clock
+    written `fCf` that produces a similar output, but which increases at 1/16
+    the rate of the first clock. </p> </div> <div class="orca-example"> <div>
 
   Next, check the outputs using `F`. The `F` operator will output
   a bang (`*`) if their inputs on either side are equal.
@@ -261,7 +252,7 @@ Now, the fun part. Use this timer to schedule different sounds.
   <div>
 
   Then, use an `X` to set the note's velocity, effectively turning the loop
-  on or off. Here, the velocity is set to `7`.
+  on or off. Here, it sets the velocity to `0x7`.
 
   It's a bit silly to use `X` to set a constant value like this, but it should
   make sense in the next step.
@@ -277,7 +268,7 @@ Now, the fun part. Use this timer to schedule different sounds.
   />
   <p id="example-7-desc" class="aria-description">
     The same drum loop, but there is now an `X` operator that sets the velocity
-    of the midi note to `7`.
+    of the midi note to `0x7`.
   </p>
 </div>
 <div class="orca-example">
@@ -285,11 +276,11 @@ Now, the fun part. Use this timer to schedule different sounds.
 
   Finally, automate this using timers:
 
-  - The drum loop begins muted, its velocity `0`.
+  - The drum loop begins muted, its velocity `0x0`.
   - The first timer at frame `0x15` turns on the drum loop by setting its
-    velocity to `0`.
+    velocity to `0xa`.
   - The second timer at frame `0x28` turns it off again by setting the velocity
-    to `0`.
+    to `0x0`.
 
   </div>
   <video 
