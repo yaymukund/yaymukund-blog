@@ -45,10 +45,15 @@ Introduction][flakes-introduction].
 Flakes, at their core, are a configuration format for the Nix toolchain. This
 format accepts inputs, which are dependencies that live in the Nix store, and
 produces outputs, which are read by various tools. For example, the `nix` CLI
-tool's `nix build` subcommand builds the `defaultPackage` in the flake output.
+tool's `nix build` subcommand builds the `packages.default` output for the
+flake.
 
 See? That wasn't so bad, was it? If this still seems a bit abstract, read on
 for an example.
+
+**Note:** In versions of `nix` prior to 2.7, `packages.default` was known as
+`defaultPackage`. If you care about compatibility with old versions, you may
+want to alias it to point to `packages.default`.
 
 [flakes-introduction]: https://xeiaso.net/blog/nix-flakes-1-2022-02-21
 
@@ -60,19 +65,19 @@ little-known command called [`nix print-dev-env`][nix-print-dev-env]:
 > `nix print-dev-env` - print shell code that can be sourced by bash to reproduce
 > the build environment of a derivation
 
-If you run `nix print-dev-env`, it will make a build environment for the
-`defaultPackage` output of your current `flake.nix`.
+If you run `nix print-dev-env`, it will build the `packages.default` output of
+your current `flake.nix`.
 
-My approach is twofold:
+This approach has two steps:
 
-1. Make a `defaultPackage`'s build environment that mutates shell environment
-   variables as desired. For example, it should add
-   `/nix/store/abc123-nvim-wrapped/bin` to the `$PATH`.
+1. Make a `packages.default` output that mutates shell environment variables as
+   desired. For example, it should add `/nix/store/abc123-nvim-wrapped/bin` to
+   the `$PATH`.
 2. Source the output of `nix print-dev-env` in my development shell.
 
 ## Putting the pieces together
 
-To construct the `defaultPackage`, you can use `pkgs.mkShell`:
+To construct the `packages.default` output, you can use `pkgs.mkShell`:
 
 ```nix
 # In flake.nix
@@ -86,20 +91,20 @@ let
   };
 in 
   {
-    outputs = {
-      defaultPackage = pkgs.mkShell {
-        packages = with pkgs; [
-          neovim-with-config
-          # anything else
-        ];
+    outputs = flake-utils.lib.eachDefaultSystem (_system: {
+        packages.default = pkgs.mkShell {
+          packages = with pkgs; [
+            neovim-with-config
+            # anything else
+          ];
 
-        shellHook = ''
-          # Optionally, inject other stuff into your shell environment.
-        '';
-      };
-    };
+          shellHook = ''
+            # Optionally, inject other stuff into your shell
+            # environment.
+          '';
+        };
+      });
   }
-};
 ```
 
 Since the shell requires `neovim-with-config`, its 'build environment' will
@@ -135,9 +140,9 @@ environment using Nix Flakes!
 ## Full dotfiles
 
 If you want to see my full dotfiles, [it lives on sourcehut][dotfiles]. [Here's
-a link to where I define `defaultPackage`][define-defaultpackage] and [here's a
-link to where I run `print-dev-env`][print-dev-env-invocation]
+a link to where I define `packages.default`][define-default] and [here's where
+I run `print-dev-env`][print-dev-env-invocation]
 
 [dotfiles]: https://git.sr.ht/~yaymukund/dotfiles/tree
-[define-defaultpackage]: https://git.sr.ht/~yaymukund/dotfiles/tree/main/item/hosts/work/flake.nix#L81
+[define-default]: https://git.sr.ht/~yaymukund/dotfiles/tree/main/item/hosts/work/flake.nix#L81
 [print-dev-env-invocation]: https://git.sr.ht/~yaymukund/dotfiles/tree/main/item/hosts/work/rebuild#L21
