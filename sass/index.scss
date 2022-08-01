@@ -111,7 +111,7 @@ ul.toc {
       border-style: dashed;
     }
 
-    p, ul > li { line-height: 1.5rem; }
+    p, ol > li, ul > li { line-height: 1.5rem; }
 
     p, h1, h2, h3, h4 {
       padding-left: 1.25rem;
