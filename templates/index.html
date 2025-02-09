@@ -32,33 +32,35 @@
   </head>
 
   <body>
-    <header>
-      <a href="/" title="Home">
-        <div>
-          <img src="/logo.png">
+    <div id="container">
+      <header>
+        <a href="/" title="Home">
+          <div>
+            <img src="/logo.png">
+          </div>
+          <h1 class="logo">
+            yaymukund<span class="s">&rsquo;s</span> weblog
+          </h1>
+        </a>
+      </header>
+
+      {% block content %}
+        {% set posts = get_section(path="posts/_index.md") %}
+        {% for page in posts.pages | slice(end=10) %}
+          {{ post::summary(page=page) }}
+        {% endfor %}
+      {% endblock content %}
+
+      {% block pagination %}
+        <div class="paginator_links">
+          <a href="{{ get_url(path="posts/page/2", trailing_slash=false) }}" class="next">Next Page &rarr;</a>
         </div>
-        <h1 class="logo">
-          yaymukund<span class="s">&rsquo;s</span> weblog
-        </h1>
-      </a>
-    </header>
+      {% endblock %}
 
-    {% block content %}
-      {% set posts = get_section(path="posts/_index.md") %}
-      {% for page in posts.pages | slice(end=10) %}
-        {{ post::summary(page=page) }}
-      {% endfor %}
-    {% endblock content %}
-
-    {% block pagination %}
-      <div class="paginator_links">
-        <a href="{{ get_url(path="posts/page/2", trailing_slash=false) }}" class="next">Next Page &rarr;</a>
-      </div>
-    {% endblock %}
-
-    {% block toc %}
-      {{ toc::table_of_contents() }}
-    {% endblock toc %}
+      {% block toc %}
+        {{ toc::table_of_contents() }}
+      {% endblock toc %}
+    </div>
 
     <footer>
       <p>powered by <a href="https://github.com/getzola/zola">zola</a></p>

@@ -3,7 +3,7 @@ build_search_index = true
 compile_sass = true
 default_language = "en"
 description = "thoughts i'd like to keep around"
-generate_feed = true
+generate_feeds = true
 title = "yaymukund's weblog"
 
 [markdown]
