@@ -1,21 +1,57 @@
 @import "normalize";
 
+@media (prefers-color-scheme: light) {
+  :root {
+    --color-darkest: #333;
+    --color-dark: #777;
+    --color-medium: #999;
+    --color-light: #f5f5f5;
+    --color-code-bg: #090909;
+    --color-accent: #eadfe9;
+    --color-bg: white;
+    --color-link: #0000ee;
+  }
+
+  pre[data-lang] {
+    filter: invert(100);
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color-darkest: #d1d5dc;
+    --color-dark: #777;
+    --color-medium: #393f40;
+    --color-light: #2a2c31;
+    --color-code-bg: #2a2c31;
+    --color-accent: #584868;
+    --color-bg: #1d2021;
+    --color-link: #378bf0;
+  }
+}
+
 html {
+  background-color: var(--color-bg);
   font-family: 'IBM Plex Sans', sans-serif;
-  color: #333;
+  color: var(--color-darkest);
   font-size: 1.125rem;
+  overflow-wrap: break-word;
+}
+
+a {
+  color: var(--color-link);
 }
 
 body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-top: 2px solid #333;
+  margin-top: 2px solid var(--color-darkest);
 }
 
 #container {
   display: inline;
-  border: 1px dashed #eadfe9;
+  border: 1px dashed var(--color-accent);
   border-width: 0 1px;
   max-width: 100%;
 }
@@ -28,7 +64,7 @@ header {
   a {
     display: flex;
     align-items: center;
-    color: #000;
+    color: var(--color-darkest);
     font-family: 'Inconsolata', monospace;
     font-weight: 700;
     text-decoration: none;
@@ -44,7 +80,7 @@ header {
 
 .paginator_links {
   max-width: 800px;
-  background-color: white;
+  background-color: var(--color-bg);
   padding: 1rem;
   display: flex;
   a.next { margin-left: auto; }
@@ -53,15 +89,15 @@ header {
 ul.toc {
   margin: 0;
   padding: 1rem 0 1rem 1rem;
-  background-color: white;
-  border-top: 1px dashed #999;
+  background-color: var(--color-bg);
+  border-top: 1px dashed var(--color-medium);
 
   li {
     list-style-type: none;
     &:not(last-child) { margin-bottom: 0.25rem; }
     a { text-decoration: none; }
     span.title { text-decoration: underline; }
-    span.date { color: #777; }
+    span.date { color: var(--color-dark); }
 
     &.current {
       span.title {
@@ -71,7 +107,7 @@ ul.toc {
           content: "→ ";
         }
       }
-      a { color: #777; }
+      a { color: var(--color-dark); }
       pointer-events: none;
     }
   }
@@ -81,7 +117,7 @@ div.post-divider {
   position: absolute;
   left: 0;
   right: 0;
-  border-top: 1px dashed #999;
+  border-top: 1px dashed var(--color-medium);
 }
 
 .post {
@@ -105,7 +141,7 @@ div.post-divider {
 
     pre:not(.poem) {
       font-family: 'Inconsolata', monospace;
-      background-color: #f5f5f5 !important;
+      background-color: var(--color-code-bg) !important;
       border-radius: 3px;
       padding: 1rem;
       font-size: 1rem;
@@ -113,7 +149,7 @@ div.post-divider {
     }
 
     hr {
-      border-color: #eadfe9;
+      border-color: var(--color-accent);
       border-style: dashed;
     }
 
@@ -137,10 +173,10 @@ div.post-divider {
     }
 
     blockquote {
-      border-left: 1px solid #777;
+      border-left: 1px solid var(--color-dark);
       em {
         font-style: normal;
-        background-color: #eadfe9;
+        background-color: var(--color-accent);
       }
     }
 
@@ -155,7 +191,7 @@ div.post-divider {
       margin: 1rem 0;
       padding: 0.2rem 0;
       > div {
-        background-color: #f5f5f5;
+        background-color: var(--color-light);
         padding-right: 1rem;
       }
     }
@@ -176,9 +212,9 @@ div.post-divider {
 
 footer {
   flex-grow: 1;
-  background-color: white;
+  background-color: var(--color-bg);
   padding: 1rem;
-  color: #aaa;
+  color: var(--color-medium);
   display: block;
   text-align: right;
   p { margin: 0; }

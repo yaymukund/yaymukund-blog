@@ -9,7 +9,7 @@ title = "yaymukund's weblog"
 [markdown]
 extra_syntaxes = ["syntaxes"]
 highlight_code = true
-highlight_theme = "inspired-github"
+highlight_theme = "visual-studio-dark"
 smart_punctuation = true
 
 [extra]

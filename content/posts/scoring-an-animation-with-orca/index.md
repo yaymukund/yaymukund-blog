@@ -400,7 +400,7 @@ div.orca-example {
   flex-direction: column-reverse;
   justify-content: space-between;
   align-items: center;
-  background-color: #f5f5f5;
+  background-color: var(--color-light);
   margin-bottom: 0.25rem;
   padding: 1rem 1rem 0 0;
 }
