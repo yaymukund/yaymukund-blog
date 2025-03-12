@@ -11,8 +11,6 @@ meta_tags = [
 
 Rotary dial telephones are a fantastic way to start learning about electronics. They're built to be disassembled and serviced [(because they were originally rented!)][rented-telephones]. There are online communities of engineers and enthusiasts who are happy to to share what they know. Most of all, they're beautiful objects that inspire curiosity and nostalgia.
 
-## Overview 
-
 Here's what I'll be making:
 
 <div class="video-container">
