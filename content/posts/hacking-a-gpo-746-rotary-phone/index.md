@@ -1,6 +1,12 @@
 +++
 date = 2025-03-12
 title = "Hacking a GPO 746 rotary phone"
+
+[extra]
+meta_tags = [
+  { property = "og:image", content = "/posts/hacking-a-gpo-746-rotary-phone/og-image.webp" },
+  { property = "og:image:alt", content = "A topaz 1970s GPO 746 telephone sat on a desk." }
+]
 +++
 
 Rotary dial telephones are a fantastic way to start learning about electronics.
