@@ -22,7 +22,9 @@
     {% endblock meta_content %}
 
     <link rel="stylesheet" href="{{ get_url(path="index.css", trailing_slash=false) }}">
-    <link href="https://fonts.googleapis.com/css?family=IBM+Plex+Sans:400,400i,700|Inconsolata:400,700&amp;subset=latin-ext" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@200..900&display=swap" rel="stylesheet">
 
     {% block rss %}
     <link rel="alternate" type="application/atom+xml" title="Atom" href="{{ get_url(path="atom.xml", trailing_slash=false) }}">

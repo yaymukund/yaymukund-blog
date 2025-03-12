@@ -7,7 +7,7 @@ generate_feeds = true
 title = "yaymukund's weblog"
 
 [markdown]
-extra_syntaxes = ["syntaxes"]
+extra_syntaxes_and_themes = ["syntaxes"]
 highlight_code = true
 highlight_theme = "visual-studio-dark"
 smart_punctuation = true

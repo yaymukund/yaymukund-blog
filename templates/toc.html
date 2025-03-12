@@ -19,6 +19,7 @@
 
 {% macro table_of_contents(current_page_slug="") %}
   <ul class="toc">
+    <h2>More posts</h2>
     {% set blog = get_section(path="posts/_index.md") %}
     {% if current_page_slug %}
       {% for page in blog.pages %}

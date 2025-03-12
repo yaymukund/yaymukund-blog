@@ -11,7 +11,7 @@ and AWS's API Gateway v2 resources.
 When you `terraform apply` this, it'll spit out an API URL. You can `GET
 /` against that API URL to run your lambda:
 
-```terraform
+```tf
 resource "aws_iam_role" "plants" {
   name = "iam_plant_api"
 

@@ -30,9 +30,8 @@
   }
 }
 
-html {
+body {
   background-color: var(--color-bg);
-  font-family: 'IBM Plex Sans', sans-serif;
   color: var(--color-darkest);
   font-size: 1.125rem;
   overflow-wrap: break-word;
@@ -74,6 +73,7 @@ header {
   }
 
   h1.logo {
+    font-size: clamp(24px, 36px, 60vw);
     margin: 0.5rem 0 1rem 1rem;
   }
 }
@@ -90,7 +90,11 @@ ul.toc {
   margin: 0;
   padding: 1rem 0 1rem 1rem;
   background-color: var(--color-bg);
-  border-top: 1px dashed var(--color-medium);
+  border-top: 1px dashed var(--color-accent);
+
+  h2 {
+    font-size: 1.125rem;
+  }
 
   li {
     list-style-type: none;
@@ -117,7 +121,7 @@ div.post-divider {
   position: absolute;
   left: 0;
   right: 0;
-  border-top: 1px dashed var(--color-medium);
+  border-top: 1px dashed var(--color-accent);
 }
 
 .post {
@@ -125,6 +129,7 @@ div.post-divider {
 
   &__meta {
     font-weight: bold;
+    color: var(--color-dark);
     margin-left: 1.25rem;
   }
 
@@ -148,6 +153,10 @@ div.post-divider {
       line-height: 1.5rem;
     }
 
+    &> h1:first-child {
+      margin-top: 0;
+    }
+
     hr {
       border-color: var(--color-accent);
       border-style: dashed;
@@ -163,9 +172,9 @@ div.post-divider {
       margin-bottom: 0;
     }
 
-    h1 { font-size: 1.5rem; }
-    h2 { font-size: 1.25rem; }
-    h3 { font-size: 1rem; }
+    h3 + .image-container img {
+      margin-top: 1.25rem;
+    }
 
     ul, ol {
       li:not(last-child) { margin-bottom: 0.25rem; }
@@ -206,6 +215,11 @@ div.post-divider {
 
     .poem-author {
       font-style: italic;
+    }
+
+    .image-container {
+      display: flex;
+      justify-content: center;
     }
   }
 }

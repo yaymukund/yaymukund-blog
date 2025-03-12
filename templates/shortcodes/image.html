@@ -1,0 +1,19 @@
+<div class="image-container">
+  <a
+    href="{{src}}"
+    {%if title %}
+      title="{{title}}"
+    {% elif alt %}
+      title="{{alt}}"
+    {% endif %}
+  >
+    <img
+      src="{{src}}"
+      {%if alt %}
+        alt="{{alt}}"
+      {% elif title %}
+        alt="{{title}}"
+      {% endif %}
+    >
+  </a>
+</div>

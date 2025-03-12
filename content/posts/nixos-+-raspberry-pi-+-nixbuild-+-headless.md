@@ -1,6 +1,6 @@
 +++
 date = 2024-02-05
-title = "Headless NixOS + Raspberry Pi + nixbuild from OSX!"
+title = "Cross-compiling NixOS for a Raspberry Pi"
 +++
 
 I had to install NixOS on my Raspberry Pi 4, Model B recently. I didn't have
